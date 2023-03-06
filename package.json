@@ -16,7 +16,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "webpack serve --mode=development",
+    "start-dev": "webpack serve --mode=development",
+    "start": "swa start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@azure/static-web-apps-cli": "^1.0.6",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.4.2",
