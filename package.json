@@ -24,7 +24,7 @@
   "scripts": {
     "start-dev": "webpack serve --mode=development",
     "start": "swa start",
-    "build": "react-scripts build",
+    "build": "webpack --mode=production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
