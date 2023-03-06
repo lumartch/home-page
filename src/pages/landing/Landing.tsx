@@ -1,9 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-
 import { useApiHook } from "../../hooks";
 
 const Landing = () => {
@@ -28,24 +23,24 @@ const Landing = () => {
     }, [callApi, isFetchDone])
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-            <CardContent>
-                <Typography gutterBottom variant="h3" component="div">
+        <div>
+            <h3>
                 Testing API Data
-                </Typography>
-                <Typography variant="body1" color="text.primary">
+            </h3>
+            <text>
                 Hello this is the endpoint data: 
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
+            </text>
+            <br/>
+            <br/>
+            <span>
                 {hello}
-                </Typography>
-                <Typography variant="subtitle2" color="GrayText">
-                    TESTING ENDPOINT: /api/hello
-                </Typography>
-            </CardContent>
-            </CardActionArea>
-        </Card>
+            </span>
+            <br/>
+            <br/>
+            <text>
+                TESTING ENDPOINT: /api/hello
+            </text>
+        </div>
     )
 }
 
