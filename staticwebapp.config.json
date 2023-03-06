@@ -1,0 +1,12 @@
+{
+  "navigationFallback": {
+    "rewrite": "/public/index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  },
+  "routes": [
+    {
+      "route": "/hello*",
+      "allowedRoles": ["anonymous"]
+    }
+  ]
+}
