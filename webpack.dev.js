@@ -11,7 +11,7 @@ const dev = {
             webSocketURL: {
                 hostname: '0.0.0.0',
                 pathname: '/ws',
-                port: 4200,
+                port: 4280,
                 protocol: 'ws',
             },
         },

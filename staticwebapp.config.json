@@ -5,7 +5,7 @@
   },
   "routes": [
     {
-      "route": "/hello*",
+      "route": "/hello",
       "allowedRoles": ["anonymous"]
     }
   ]
