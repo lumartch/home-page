@@ -11,7 +11,7 @@ const Landing = () => {
 			const response = await getHello();
 			setHello(response.data);
 		} catch (e){
-			setHello("HELLO");
+			setHello('Something happend!');
 		}
 	}, [getHello]);
 
