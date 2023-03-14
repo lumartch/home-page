@@ -23,7 +23,7 @@ jobs:
       - name: Install modules
         run: npm ci
       - name: Run ESLint
-        run: eslint src/
+        run: npm run lint
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
