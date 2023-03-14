@@ -20,8 +20,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - name: Install modules
+        run: npm ci
       - name: Run ESLint
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+        run: eslint src/
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
