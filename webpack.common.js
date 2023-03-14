@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ESLintPlugin = require('eslint-webpack-plugin');
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 const common = {
   entry: "./src/index.tsx",
@@ -38,9 +38,11 @@ const common = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
-      plugins: [new ESLintPlugin({
-        extensions: ['ts', 'tsx']
-      })],
+      plugins: [
+        new ESLintPlugin({
+          extensions: ["ts", "tsx"],
+        }),
+      ],
     }),
   ],
 };
