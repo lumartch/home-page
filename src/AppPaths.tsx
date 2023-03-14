@@ -1,9 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
-import Landing from "./pages/landing/Landing";
+import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
+import Landing from './pages/landing/Landing';
 
 export const AppPaths = createBrowserRouter([
-  {
-    path: "/",
-    element: <Landing />,
-  }
+	{
+		path: '/',
+		element: <Landing />,
+	}
 ]);
