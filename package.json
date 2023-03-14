@@ -23,7 +23,7 @@
     "start-dev": "webpack-dev-server --mode=development",
     "start": "swa start",
     "build": "webpack --mode=production",
-    "lint": "eslint src/",
+    "lint": "eslint -c .eslintrc.json src/",
     "lint:fix": "eslint src/ --fix"
   },
   "devDependencies": {
