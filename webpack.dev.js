@@ -5,6 +5,7 @@ const dev = {
         static: {
             directory: path.join(__dirname, 'public'),
         },
+        historyApiFallback: true,
         compress: true,
         port: 3000,
         client: {

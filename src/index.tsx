@@ -5,16 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router';
 import {AppPaths} from './AppPaths';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-	<React.StrictMode>
-		<React.Suspense fallback={<>Loading...</>}>
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+	.render(
+		<React.StrictMode>
 			<RouterProvider router={AppPaths} />
-		</React.Suspense>
-	</React.StrictMode>
-);
+		</React.StrictMode>
+	);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
