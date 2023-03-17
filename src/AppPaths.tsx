@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import Landing from './pages/landing/Landing';
-import App from './pages/demo/App';
+
+const App = lazy(() => import('./pages/demo/App'));
+const Main = lazy(() => import('./pages/main/Main'));
 
 export const AppPaths = createBrowserRouter([
 	{
 		path: '/',
-		element: <Landing />,
+		element: <Main />,
 		errorElement: <div>PAGE NOT FOUND</div>,
 	},
 	{

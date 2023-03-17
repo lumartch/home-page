@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { StrictMode, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { Container } from '@mui/material';
+
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router';
-import {AppPaths} from './AppPaths';
+import { AppPaths } from './AppPaths';
+import { Spinner } from './util';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 	.render(
-		<React.StrictMode>
-			<RouterProvider router={AppPaths} />
-		</React.StrictMode>
+		<StrictMode>
+			<Container maxWidth="xl">
+				<Suspense fallback={<Spinner />}>
+					<RouterProvider router={AppPaths} />
+				</Suspense>
+			</Container>
+		</StrictMode>
 	);
 
 // If you want to start measuring performance in your app, pass a function
