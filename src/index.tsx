@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router';
 import { AppPaths } from './AppPaths';
 import { Spinner } from './util';
-import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 	.render(
