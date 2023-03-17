@@ -12,16 +12,6 @@ const common = {
     filename: '[name].[chunkhash].bundle.js',
     path: path.resolve(__dirname, "build"),
   },
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
   module: {
     rules: [
       {
