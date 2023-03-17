@@ -5,7 +5,23 @@ const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const common = {
-  entry: "./src/index.tsx",
+  entry: {
+    index: "./src/index.tsx",
+  },
+  output: {
+    filename: '[name].[chunkhash].bundle.js',
+    path: path.resolve(__dirname, "build"),
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   module: {
     rules: [
       {
@@ -40,10 +56,6 @@ const common = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
-  },
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "build"),
   },
   plugins: [
     new HtmlWebpackPlugin({
