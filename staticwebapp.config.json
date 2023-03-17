@@ -1,11 +1,11 @@
 {
   "navigationFallback": {
-    "rewrite": "/public/index.html",
-    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+    "rewrite": "index.html",
+    "exclude": ["*.{svg,png,jpg,gif}","*.{css,scss}","*.js"]
   },
   "routes": [
     {
-      "route": "/hello",
+      "route": "/api/hello",
       "allowedRoles": ["anonymous"]
     }
   ]

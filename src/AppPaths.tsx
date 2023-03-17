@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import Landing from './pages/landing/Landing';
+
+const Main = lazy(() => import('./pages/main/Main'));
+const NotFound = lazy(() => import('./pages/notFound/NotFound'));
 
 export const AppPaths = createBrowserRouter([
 	{
 		path: '/',
-		element: <Landing />,
-	}
+		element: <Main />,
+		errorElement: <NotFound />,
+	},
 ]);

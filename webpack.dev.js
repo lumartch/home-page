@@ -1,10 +1,12 @@
 const path = require('path');
 
 const dev = {
+    devtool: 'source-map',
     devServer: {
         static: {
             directory: path.join(__dirname, 'public'),
         },
+        historyApiFallback: true,
         compress: true,
         port: 3000,
         client: {
