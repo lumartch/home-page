@@ -1,1 +1,0 @@
-export { AppPaths } from './AppPaths';
