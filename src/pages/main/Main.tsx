@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import { MainStyle } from './Main.css';
-import { Header, LatestPost, PostCards } from '../../components';
+import { About, Header, LatestPost, PostCards } from '../../components';
 
 const latestPostExample = {
 	title: 'What is Lorem Ipsum?',
@@ -11,18 +11,23 @@ const latestPostExample = {
 
 const Main = () => {
 	return (
-		<Grid className={MainStyle} container spacing={2} rowSpacing={2}>
+		<Grid container spacing={2} rowSpacing={2}>
 			<Grid item xs={12}>
 				<Header />
 			</Grid>
-			<Grid item xs={12}>
-				<LatestPost title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
+			<Grid className={MainStyle} container spacing={2} rowSpacing={2} xs={10}>
+				<Grid item xs={12}>
+					<LatestPost title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
+				</Grid>
+				<Grid item xs={6}>
+					<PostCards date={new Date(Date.now()).toLocaleString()} title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
+				</Grid>
+				<Grid item xs={6}>
+					<PostCards date={new Date(Date.now()).toLocaleString()} title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
+				</Grid>
 			</Grid>
-			<Grid item xs={6}>
-				<PostCards title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
-			</Grid>
-			<Grid item xs={6}>
-				<PostCards title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
+			<Grid xs={2}>
+				<About />
 			</Grid>
 		</Grid>
 	);
