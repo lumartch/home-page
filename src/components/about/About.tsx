@@ -3,6 +3,7 @@ import { Grid, Typography, Link } from '@mui/material';
 
 import { GridStyle } from './About.css';
 import { DevInfo } from '../../util';
+import { IFrame } from '../iframe/IFrame';
 
 export const About = () => {
     return (
@@ -65,6 +66,9 @@ export const About = () => {
                             SoundCloud
                         </Link>
                     </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <IFrame />
                 </Grid>
             </Grid>
         </Grid>
