@@ -1,13 +1,13 @@
 import React, { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-const Main = lazy(() => import('./pages/main/Main'));
+const Landing = lazy(() => import('./pages/landing/Landing'));
 const NotFound = lazy(() => import('./pages/notFound/NotFound'));
 
 export const AppPaths = createBrowserRouter([
 	{
 		path: '/',
-		element: <Main />,
+		element: <Landing />,
 		errorElement: <NotFound />,
 	},
 ]);
