@@ -1,55 +1,29 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { useApiHook } from '../../hooks';
-import { ApiHandler } from '../../util';
+import React from 'react'; 
+import { Grid } from '@mui/material';
+
+import Main from '../main/Main';
+import { LatestPost, PostCards } from '../../components';
+
 
 const Landing = () => {
-	const [hello, setHello] = useState<string>('');
-	const [isFetchDone, setIsFetchDone] = useState<boolean>(false);
-	const [isLoading, setIsLoading] = useState<boolean>(true);
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const [error, setError] = useState<any>(null);
-	const { getHello } = useApiHook();
-
-	const callApi = useCallback( async () => {
-		try {
-			const response = await getHello();
-			setHello(response.data);
-		} catch (e){
-			setHello('');
-			setError(e);
-		} finally {
-			setIsLoading(false);
-		}
-	}, [getHello]);
-
-	useEffect(() => {
-		if(!isFetchDone){
-			setIsFetchDone(true);
-			callApi();
-		}
-	}, [callApi, isFetchDone]);
+	const latestPostExample = {
+		title: 'What is Lorem Ipsum?',
+		content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+		link: '/api/post/123'
+	};
 
 	return (
-		<ApiHandler isLoading={isLoading} error={error}>
-			<div>
-				<h3>
-					Testing API Data
-				</h3>
-				<text>
-					Hello this is the endpoint data: 
-				</text>
-				<br/>
-				<br/>
-				<span>
-					{hello}
-				</span>
-				<br/>
-				<br/>
-				<text>
-					TESTING ENDPOINT: /api/hello
-				</text>
-			</div>
-		</ApiHandler>
+		<Main>
+			<Grid item xs={12}>
+				<LatestPost title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
+			</Grid>
+			<Grid item xs={6}>
+				<PostCards date={new Date(Date.now()).toLocaleString()} title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
+			</Grid>
+			<Grid item xs={6}>
+				<PostCards date={new Date(Date.now()).toLocaleString()} title={latestPostExample.title} content={latestPostExample.content} link={latestPostExample.link} />
+			</Grid>
+		</Main>
 	);
 };
 

@@ -1,23 +1,25 @@
 import React, { StrictMode, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Container } from '@mui/material';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router';
 import { AppPaths } from './AppPaths';
 import { Spinner } from './util';
-import { IndexStyle } from './index.css';
+import { DarkTheme } from './theme/DarkTheme';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 	.render(
 		<StrictMode>
-			<div className={IndexStyle}>
+			<ThemeProvider theme={DarkTheme}>
+				<CssBaseline />
 				<Container maxWidth="xl">
 					<Suspense fallback={<Spinner />}>
 						<RouterProvider router={AppPaths} />
 					</Suspense>
 				</Container>
-			</div>
+			</ThemeProvider>
 		</StrictMode>
 	);
 

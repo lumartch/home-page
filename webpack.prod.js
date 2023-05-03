@@ -1,3 +1,5 @@
+const CopyPlugin = require("copy-webpack-plugin");
+
 const prod = {
     performance: {
         hints: false,
@@ -6,9 +8,14 @@ const prod = {
     },
     optimization: {
         splitChunks: {
-            chunks: 'all',
+            chunks: "all",
         },
     },
+    plugins: [
+        new CopyPlugin({
+            patterns: [{ from: "public/lumartch-dev.JPG", to: "." }],
+        }),
+    ],
 };
 
-module.exports = { prod }
+module.exports = { prod };
