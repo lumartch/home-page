@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import { Grid } from '@mui/material';
 import { MainStyle } from './Main.css';
-import { About, Header} from '../../components';
+import { Header} from '../../components';
 
 interface IMain {
 	children?: ReactNode;
@@ -13,12 +13,12 @@ const Main: FC<IMain> = ({ children }) => {
 			<Grid item xs={12}>
 				<Header />
 			</Grid>
-			<Grid item className={MainStyle} container spacing={2} xs={10}>
+			<Grid item className={MainStyle} container spacing={2} xs={12}>
 				{ children }
 			</Grid>
-			<Grid item xs={2}>
+			{/* <Grid item xs={2}>
 				<About />
-			</Grid>
+			</Grid> */}
 		</Grid>
 	);
 };
